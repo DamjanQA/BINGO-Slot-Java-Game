@@ -43,17 +43,17 @@ public class BingoSlot {
         textLabel.setText("Current Cash (" + currentMoney + "$)");
         textLabel.setOpaque(true);
 
-        //tekst rezultata
+        //result text frame
         textPanel.setLayout(new BorderLayout());
         textPanel.add(textLabel);
         frame.add(textPanel, BorderLayout.NORTH);
 
-        ///spin dugme
+        ///spin button
         spinButton.setFocusable(false);
         buttonPanel.add(spinButton);
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
-        //tabla
+        //table frame
         boardPanel.setLayout(new GridLayout(3, 3));
         boardPanel.setBackground(Color.darkGray);
         frame.add(boardPanel);
@@ -78,7 +78,7 @@ public class BingoSlot {
                     return;
                 }
 
-                //Plaćanje
+                //Paying method
                 Score();
 
                 //RNG
@@ -87,10 +87,10 @@ public class BingoSlot {
                 //Bingo
                 checkBingo();
 
-                //Provera+dobitak
+                // Winning combination check + gains
                 checkWinner();
 
-                // Kraj
+                // Game over check
                 checkOver();
             }
         });
@@ -148,7 +148,7 @@ public class BingoSlot {
             BINGO = true;
             bingoKombinacija = String.valueOf(temp);
         }
-        ///// bojenje binga
+        ///// Bingo colors
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
                 if (board[r][c].getText().equals(bingoKombinacija)) {
@@ -295,7 +295,7 @@ public class BingoSlot {
     }
 
     void Score() {
-        // resetuje spin
+        // Spin reset
         SPIN = false;
         BINGO = false;
         // resetuje boje
