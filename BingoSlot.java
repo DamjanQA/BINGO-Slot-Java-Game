@@ -167,7 +167,7 @@ public class BingoSlot {
                     board[r][1].getText().equals(board[r][2].getText())) {
                 count++;
                 SPIN = true;
-                //prvi red
+                //first row
                 if (board[0][0].getText().equals(board[0][1].getText()) &&
                         board[0][1].getText().equals(board[0][2].getText())) {
                     for (int i = 0; i < 3; i++) {
@@ -177,7 +177,7 @@ public class BingoSlot {
                         textLabel.setForeground(Color.white);
                     }
                 }
-                //drugi red
+                //second row
                 if (board[1][0].getText().equals(board[1][1].getText()) &&
                         board[1][1].getText().equals(board[1][2].getText())) {
                     for (int i = 0; i < 3; i++) {
@@ -187,7 +187,7 @@ public class BingoSlot {
                         textLabel.setForeground(Color.white);
                     }
                 }
-                //treci red
+                //third row
                 if (board[2][0].getText().equals(board[2][1].getText()) &&
                         board[2][1].getText().equals(board[2][2].getText())) {
                     for (int i = 0; i < 3; i++) {
@@ -205,7 +205,7 @@ public class BingoSlot {
                     board[1][c].getText().equals(board[2][c].getText())) {
                 count++;
                 SPIN = true;
-                //prva kolona
+                //first column
                 if (board[0][0].getText().equals(board[1][0].getText()) &&
                         board[1][0].getText().equals(board[2][0].getText())) {
                     for (int i = 0; i < 3; i++) {
@@ -215,7 +215,7 @@ public class BingoSlot {
                         textLabel.setForeground(Color.white);
                     }
                 }
-                //druga kolona
+                //first column
                 if (board[0][1].getText().equals(board[1][1].getText()) &&
                         board[1][1].getText().equals(board[2][1].getText())) {
                     for (int i = 0; i < 3; i++) {
@@ -225,7 +225,7 @@ public class BingoSlot {
                         textLabel.setForeground(Color.white);
                     }
                 }
-                //treca kolona
+                //first column
                 if (board[0][2].getText().equals(board[1][2].getText()) &&
                         board[1][2].getText().equals(board[2][2].getText())) {
                     for (int i = 0; i < 3; i++) {
@@ -264,7 +264,7 @@ public class BingoSlot {
             board[1][1].setBackground(Color.gray);
             board[2][0].setBackground(Color.gray);
         }
-        // rezultati
+        // Results (top banner)
         if (BINGO == false) {
             if (SPIN == true) {
                 currentMoney = currentMoney + (2 * count);
@@ -282,7 +282,7 @@ public class BingoSlot {
         if (0 >= currentMoney) {
             textLabel.setText("GAME OVER! (" + currentMoney + "$)");
             GAMEOVER = true;
-            ///// boje za gejmover
+            ///// Colors for gameover
             for (int r = 0; r < 3; r++) {
                 for (int c = 0; c < 3; c++) {
                     board[r][c].setBackground(Color.gray);
@@ -298,7 +298,7 @@ public class BingoSlot {
         // Spin reset
         SPIN = false;
         BINGO = false;
-        // resetuje boje
+        // Resets colors
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
                 board[r][c].setBackground(Color.darkGray);
